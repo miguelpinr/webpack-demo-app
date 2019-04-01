@@ -20,6 +20,20 @@ module.exports = {
                 ], 
                 //they are executed from the end to the beginning of the array
             },
+            {
+                test: /\.html$/,
+                use: ["html-loader"],
+            },
+            {
+                test: /\.(svg|png|jpeg|gif)$/,
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[hash].[ext]",
+                        outputPath: "imgs",
+                    },
+                },
+            },
         ],
     },
 }
